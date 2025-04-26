@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="logo_pequena-removebg-preview.png" type="image/x-icon">
+  <title>Sobre Nós</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function toggleMenu() {
+      const menu = document.querySelector('.menu');
+      menu.classList.toggle('ativo');
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Menu Lateral -->
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="contato.html">Fale Conosco</a>
+    <a href="adote.html">Adote</a>
+    <a href="sobre.html">Quem Somos</a>
+  </div>
+
+  <!-- Cabeçalho -->
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <h1>Sobre Nós</h1>
+    <img class="logo-topo" src="logo_pequena-removebg-preview.png" alt="Logo Menor">
+  </header>
+
+  <!-- Slider de Imagem -->
+  <section class="imagem-cao">
+    <img src="carrosel.png" alt="Slider Sobre">
+  </section>
+
+  <!-- Logo Central e Texto -->
+  <section style="text-align: center; padding: 40px 20px;">
+    <img src="cãotinho logo.png" alt="Logo Central" style="height: 120px; margin-bottom: 20px;">
+
+    <p style="max-width: 800px; margin: 0 auto 20px; font-size: 18px;">
+      A ONG Cãotinho surgiu do amor de seu fundador, João Lima, por cachorros. Desde jovem, João se sensibilizava ao ver animais abandonados e sempre fazia o possível para ajudá-los. Com o tempo, percebeu que podia fazer mais, e assim nasceu a Caotinho — um espaço de cuidado, acolhimento e recomeço para cães em situação de rua. 
+    </p>
+    <p style="max-width: 800px; margin: 0 auto; font-size: 18px;">
+      Hoje, a ONG atua com resgates, cuidados veterinários e campanhas de adoção. Também promovemos ações educativas para incentivar a guarda responsável. Cada cachorro que passa por aqui recebe mais do que abrigo: recebe amor, atenção e a chance de ter um novo lar.
+    </p>
+  </section>
+  <script>
+    // Fecha o menu lateral se clicar fora
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('menuLateral');
+      const botaoMenu = document.querySelector('.menu-btn');
+  
+      // Verifica se o menu está aberto
+      if (menu.style.display === 'flex') {
+        // Se clicou fora do menu e fora do botão que abre o menu
+        if (!menu.contains(event.target) && !botaoMenu.contains(event.target)) {
+          menu.style.display = 'none';
+        }
+      }
+    });
+  </script>
+  
+</body>
+</html>

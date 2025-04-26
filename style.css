@@ -1,0 +1,435 @@
+/* ESTILO GERAL */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* TOPO COM LOGO E BOTÃO */
+  .topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 500px;
+    background-color: white;
+    flex-wrap: wrap;
+  }
+  
+  .topo img {
+    height: 200px;
+    max-width: 100%;
+  }
+  
+  /* ESTILO DOS BOTÕES */
+  .botao-fale {
+    background-color: #174fae;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .botao-fale:hover {
+    background-color: #000000;
+  }
+  
+  /* IMAGEM DO SLIDER */
+  .imagem-cao img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* CONTAINER DOS BOTÕES ADOTE / QUEM SOMOS */
+  .botoes-acao {
+    display: flex;
+    justify-content: center;
+    gap: 300px;
+    margin: 30px auto;
+    flex-wrap: wrap;
+  }
+  
+  .botoes-acao .botao-fale {
+    font-size: 30px;
+    padding: 10px 60px;
+  }
+  
+  /* RESPONSIVIDADE PARA CELULAR */
+  @media (max-width: 600px) {
+    .topo {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 20px;
+    }
+  
+    .topo img {
+      height: 150px;
+    }
+  
+    .botao-fale {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  
+    .botoes-acao {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+  
+  /*ADOTE*/
+  
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  .menu-btn {
+    font-size: 30px;
+    cursor: pointer;
+  }
+  .menu-lateral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #003366;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+  }
+  .menu-lateral a {
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  .titulo {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .logo-topo {
+    height: 40px;
+  }
+  .cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px;
+    flex-wrap: wrap;
+  }
+  .card {
+    text-align: center;
+  }
+  .card img {
+    width: 250px;
+    border-radius: 10px;
+  }
+  .card button {
+    margin-top: 10px;
+    background-color: #003366;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-content {
+    background-color: #003366;
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 600px;
+  }
+  .modal-content input {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    color: #333;
+  }
+  .modal-content button {
+    margin: 10px auto 0 auto;
+    display: block;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #5d83bc;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  .logo-rodape {
+    display: block;
+    margin: 40px auto;
+    height: 60px;
+  }
+
+  
+  /* MENU LATERAL */
+  .menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 200px;
+    height: 100%;
+    background-color: #063e86;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 999;
+  }
+  
+  .menu.ativo {
+    left: 0;
+  }
+  
+  .menu a {
+    color: white;
+    text-decoration: none;
+    margin: 15px 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* TOPO */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .menu-icon {
+    font-size: 32px;
+    cursor: pointer;
+  }
+  
+  header h1 {
+    font-family: 'Georgia', serif;
+    font-size: 32px;
+    font-weight: bold;
+  }
+  
+  .logo-topo {
+    height: 40px;
+  }
+  
+  /* CARDS */
+  .cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    background: #fff;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .card img {
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .card .nome {
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .card button {
+    background-color: #063e86;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .card button:hover {
+    background-color: #042e63;
+  }
+  
+  /* MODAL */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: #063e86;
+    padding: 30px;
+    border-radius: 30px;
+    width: 90%;
+    max-width: 600px;
+    color: white;
+    position: relative;
+  }
+  
+  .modal-content h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .modal-content label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ddd;
+    font-size: 16px;
+  }
+  
+  .modal-content button {
+    background-color: #5d83bc;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .fechar {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 26px;
+    cursor: pointer;
+  }
+  
+  /* RODAPÉ */
+  footer {
+    margin-top: 40px;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  footer img {
+    height: 60px;
+  }
+  
+  /* RESPONSIVIDADE */
+  @media (max-width: 768px) {
+    .cards-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card img {
+      width: 80%;
+    }
+  
+    header h1 {
+      font-size: 24px;
+    }
+  
+    .logo-topo {
+      height: 30px;
+    }
+  }
+  
+  /* FALE CONOSCO */
+  .fale-container {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .fale-icone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .fale-icone i {
+    font-size: 24px;
+    color: #063e86;
+  }
+  
+  .mapa {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0;
+  }
+  
+  .triangulo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 30px;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+  
+  .triangulo div:nth-child(3) {
+    grid-column: span 2;
+  }
+  

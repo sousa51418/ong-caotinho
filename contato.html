@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="logo_pequena-removebg-preview.png" type="image/x-icon">
+  <title>Fale Conosco</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function toggleMenu() {
+      const menu = document.querySelector('.menu');
+      menu.classList.toggle('ativo');
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- MENU LATERAL -->
+  <nav class="menu">
+    <a href="index.html">Home</a>
+    <a href="contato.html">Fale Conosco</a>
+    <a href="adote.html">Adote</a>
+    <a href="sobre.html">Quem Somos</a>
+  </nav>
+
+  <!-- TOPO -->
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <h1>Fale Conosco</h1>
+    <img src="logo_pequena-removebg-preview.png" alt="Logo" class="logo-topo">
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <section class="fale-container">
+    <div class="triangulo">
+      <!-- Horário -->
+      <div class="fale-icone">
+        <i class="fas fa-clock"></i>
+        <span>Seg a Sex: 08h às 18h</span>
+      </div>
+
+      <!-- Contato -->
+      <div class="fale-icone">
+        <i class="fas fa-phone"></i>
+        <span>(11) 99999-9999<br>contato@caotinhosolidario.org<br>WhatsApp: (11) 98888-8888</span>
+      </div>
+
+      <!-- Localização -->
+      <div class="fale-icone">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Rua dos Cãezinhos, 123 - Bairro Feliz - São Paulo - SP</span>
+      </div>
+    </div>
+
+    <!-- Mapa -->
+    <iframe
+      class="mapa"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.7702713480576!2d-46.57778138443071!3d-23.50851526531545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5cdbb28a2a9b%3A0xc5b8f12a8f0b55f7!2sSão%20Paulo%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1614697577036!5m2!1spt-BR!2sbr"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+  </section>
+  <script>
+    // Fecha o menu lateral se clicar fora
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('menuLateral');
+      const botaoMenu = document.querySelector('.menu-btn');
+  
+      // Verifica se o menu está aberto
+      if (menu.style.display === 'flex') {
+        // Se clicou fora do menu e fora do botão que abre o menu
+        if (!menu.contains(event.target) && !botaoMenu.contains(event.target)) {
+          menu.style.display = 'none';
+        }
+      }
+    });
+  </script>
+  
+</body>
+</html>

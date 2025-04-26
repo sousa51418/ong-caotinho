@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="logo_pequena-removebg-preview.png" type="image/x-icon">
+  <title>Adote</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+      emailjs.init("EGWY94tjb-Ht8UXSv"); <!-- Aqui usa a PUBLIC KEY -->
+    })();
+  </script>
+</head>
+<body>
+
+  <div class="menu-lateral" id="menuLateral">
+    <a href="index.html">Home</a>
+    <a href="adote.html">Adote</a>
+    <a href="sobre.html">Quem Somos</a>
+    <a href="contato.html">Fale Conosco</a>
+  </div>
+
+  <header>
+    <div class="menu-btn" onclick="document.getElementById('menuLateral').style.display = 'flex'">&#9776;</div>
+    <div class="titulo">ADOTE</div>
+    <img src="logo_pequena-removebg-preview.png" class="logo-topo" alt="Logo Cãotinho">
+  </header>
+
+  <section class="cards-container">
+    <div class="card">
+      <img src="dog1.png" alt="Luna">
+      <p>Luna, 2 anos</p>
+      <button onclick="abrirFormulario('Luna')">QUERO ADOTAR</button>
+    </div>
+    <div class="card">
+      <img src="dog2.png" alt="Pandora">
+      <p>Pandora, 5 meses</p>
+      <button onclick="abrirFormulario('Pandora')">QUERO ADOTAR</button>
+    </div>
+    <div class="card">
+      <img src="dog3.png" alt="Chico">
+      <p>Chico, 4 anos</p>
+      <button onclick="abrirFormulario('Chico')">QUERO ADOTAR</button>
+    </div>
+  </section>
+
+  <!-- Modal do Formulário -->
+  <div id="modalFormulario" class="modal" onclick="fecharModalCliqueFora(event)">
+    <div class="modal-content">
+      <span class="fechar" onclick="fecharModal()">&times;</span>
+      <p>Maravilha! Preencha com seu dados que vamos entrar em contato.</p>
+      <form id="formAdocao" onsubmit="enviarFormulario(event)">
+        <label>Nome:</label>
+        <input type="text" name="nome" required>
+        <label>Whatsapp:</label>
+        <input type="tel" name="whatsapp" required>
+        <label>E-mail:</label>
+        <input type="email" name="email" required>
+        <input type="hidden" name="cachorro" id="nomeCachorro">
+        <button id="adotarBtn" type="submit">Quero adotar!</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal de Confirmação -->
+  <div id="modalConfirmacao" class="modal">
+    <div class="modal-content" style="text-align: center; background-color: #5d83bc;">
+      <p style="font-size: 20px; font-weight: bold; color: white;">Você está mais próximo de adotar um amigo!</p>
+      <p style="margin: 10px 0 20px 0; font-weight: bold; color: white;">Entraremos em contato em breve!</p>
+      <img src="logo_pequena-removebg-preview.png" alt="Logo Cãotinho Solidário" style="height: 60px;">
+    </div>
+  </div>
+
+  <img src="cãotinho logo.png" alt="Logo Rodapé" class="logo-rodape">
+
+  <script>
+    function abrirFormulario(nomeCao) {
+      const modal = document.getElementById('modalFormulario');
+      modal.style.display = 'flex';
+      document.getElementById('adotarBtn').innerText = 'Quero adotar a ' + nomeCao + '!';
+      document.getElementById('nomeCachorro').value = nomeCao;
+    }
+
+    function enviarFormulario(event) {
+      event.preventDefault();
+
+      emailjs.sendForm('service_k0zquya', 'template_y7p4i2a', '#formAdocao')
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          document.getElementById('modalFormulario').style.display = 'none';
+          document.getElementById('modalConfirmacao').style.display = 'flex';
+          setTimeout(() => {
+            document.getElementById('modalConfirmacao').style.display = 'none';
+          }, 4000);
+        }, function(error) {
+          console.log('FAILED...', error);
+          alert('Ocorreu um erro ao enviar o formulário. Tente novamente.');
+        });
+    }
+
+    function fecharModal() {
+      document.getElementById('modalFormulario').style.display = 'none';
+    }
+
+    function fecharModalCliqueFora(event) {
+      const modalContent = document.querySelector('.modal-content');
+      if (!modalContent.contains(event.target)) {
+        fecharModal();
+      }
+    }
+
+    // Fecha o menu lateral se clicar fora
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('menuLateral');
+      const botaoMenu = document.querySelector('.menu-btn');
+
+      if (menu.style.display === 'flex') {
+        if (!menu.contains(event.target) && !botaoMenu.contains(event.target)) {
+          menu.style.display = 'none';
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+
